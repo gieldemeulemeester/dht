@@ -1,0 +1,4 @@
+influxdb
+schedule
+adafruit-circuitpython-dht
+RPI.GPIO
