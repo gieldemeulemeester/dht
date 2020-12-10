@@ -18,10 +18,10 @@ docker run -d dht
 
 ### Docker Compose
 
-This is an example service definition that could be added in `docker-compose.yml`. The *owm* service depends on the *influxdb* service for data logging.
+This is an example service definition that could be added in `docker-compose.yml`. The *dht* service depends on the *influxdb* service for data logging.
 
 ```yml
-  dht:
+dht:
     container_name: dht
     build: ./services/dht/
     depends_on:
