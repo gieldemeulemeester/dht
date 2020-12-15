@@ -5,7 +5,7 @@ from influxdb import InfluxDBClient
 
 def get_timestamp():
     client = InfluxDBClient(os.environ['INFLUXDB_HOST'], os.environ['INFLUXDB_PORT'], os.environ['INFLUXDB_USER'], os.environ['INFLUXDB_PASSWORD'], os.environ['INFLUXDB_DB'])
-    result = client.query(("SELECT * FROM %s WHERE host='%s' ORDER by time DESC LIMIT 1") % (os.environ['INFLUXDB_MEASUREMENT'], os.environ['HOST_HOSTNAME']))
+    result = client.query(("SELECT * FROM %s WHERE host='%s' ORDER by time DESC LIMIT 1") % (os.environ['INFLUXDB_MEASUREMENT'], os.environ['DHT_HOSTNAME']))
     points = result.get_points(measurement=os.environ['INFLUXDB_MEASUREMENT'])
     for point in points: return datetime.datetime.strptime(point['time'], '%Y-%m-%dT%H:%M:%SZ')
 

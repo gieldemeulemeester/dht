@@ -27,7 +27,8 @@ dht:
     depends_on:
       - influxdb
     environment:
-      - HOST_HOSTNAME=daeron
+      - DHT_HOSTNAME=daeron
+      - DHT_INTERVAL=5
       - INFLUXDB_HOST=influxdb
       - INFLUXDB_PORT=8086
       - INFLUXDB_DB=iot
@@ -35,7 +36,6 @@ dht:
       - INFLUXDB_PASSWORD=<insert password>
       - INFLUXDB_RETENTION_POLICY=raw
       - INFLUXDB_MEASUREMENT=air
-      - DHT_INTERVAL=5
     devices:
       - /dev/gpiomem:/dev/gpiomem
     privileged: true

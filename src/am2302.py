@@ -13,7 +13,7 @@ def log_influx(temperature, humidity):
             "measurement": os.environ['INFLUXDB_MEASUREMENT'],
             "time": datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'),
             "tags": {
-                "host": os.environ['HOST_HOSTNAME']
+                "host": os.environ['DHT_HOSTNAME']
             },
             "fields": {
                 "temperature": float(temperature),
